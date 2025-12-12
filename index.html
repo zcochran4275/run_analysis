@@ -78,5 +78,52 @@
         </div>
     </div>
 
+    <h2>Discussion and Conclusion</h2>
+
+    <p>
+    Off-the-ball runs in behind play a critical role in soccer, serving both as a direct attacking threat and as a mechanism for disrupting defensive structures. We first conclude that possessions containing at least one run in behind have a significantly higher (14%) probability of leading to a shot. This analysis was made possible by the data collection efforts of SkillCorner, who provided the large-scale spatiotemporal tracking dataset used in this study.
+    </p>
+
+    <p>
+    SkillCorner applied proprietary algorithms to detect and categorize off-the-ball runs. Using the SkillCorner datasets, we combined player- and ball-tracking data with an event-level dataset of off-the-ball runs to compute run-level features essential to our analysis. These features included spatial endpoints (x, y), run angle, speed, curvature, defensive-line interactions, and the number of opponents passed. We then reconstructed possessions across matches, identified whether each possession resulted in a shot, and created a possession index linking runs to possessions. This process yielded the final dataset used for analysis.
+    </p>
+
+    <p>
+    The second major component of our analysis focused on identifying which run characteristics significantly predict whether a possession leads to a shot. Using one-variable logistic regression models, we reduced the full feature set to a smaller subset of significant predictors. These included end location of the run along the x-axis, distance covered, width at the end of the run and change in width during the run, run angle, defensive-line height and the runner’s relationship to that line, and distance between the runner and the player in possession.
+    </p>
+
+    <p>
+    It is important to note that soccer actions and off-the-ball runs cannot be fully characterized using linear relationships alone. Many features interact and exhibit strong correlations, which limits the ability of simple models to capture their combined effects. Our correlation analysis revealed several highly correlated features, such as distance covered and change in defensive-line height, which is expected given how attacking plays unfold. Nevertheless, these linear models still provide meaningful insight into how individual run characteristics relate to shot creation.
+    </p>
+
+    <p>
+    Beyond identifying significant predictors, we also examined how these features influence the likelihood of a run contributing to a shot. By separating runs into those that led to shots and those that did not, we compared feature distributions to uncover consistent patterns. From this analysis, we identified six key characteristics of effective runs in behind:
+    </p>
+
+    <ol>
+        <li>
+            Runs that start higher up the field and end near the top of the penalty box are more likely to lead to shots. This aligns with the objective of advancing the ball into dangerous central areas closer to goal.
+        </li>
+        <li>
+            Runs that cover longer distances tend to produce more shots, consistent with the high threat posed by counterattacks in which players exploit large spaces at speed.
+        </li>
+        <li>
+            Runs that significantly reduce width by moving centrally and that finish in central areas have a higher likelihood of leading to shots than runs that remain wide.
+        </li>
+        <li>
+            Diagonal runs toward the center of the field are more effective than purely vertical runs, supporting tactical principles commonly associated with striker movement.
+        </li>
+        <li>
+            Runs that create substantial disruption to the defensive line, relative to its initial height, are more likely to result in shots. Both forcing a low defensive line to drop further and compelling a high line to retreat substantially increase shot probability.
+        </li>
+        <li>
+            Runs made closer to the player in possession are significantly more likely to lead to shots, emphasizing the importance of providing an accessible and immediate passing option.
+        </li>
+    </ol>
+
+    <p>
+    A key limitation of this work is that many of the analyzed variables interact in nonlinear ways that simple logistic regression models cannot fully capture. However, the findings offer clear, evidence-based insights into what constitutes an effective run in behind. These results help reinforce tactical principles for striker and winger movement and provide a foundation for player development, coaching, and future modeling using more expressive nonlinear approaches.
+    </p>
+
 </body>
 </html>
